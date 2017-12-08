@@ -2,14 +2,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740199431,
             "changeTime": 1512740199431,
             "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": true
         }
@@ -17,14 +17,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740199431,
             "changeTime": 1512740199431,
             "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -37,24 +37,22 @@
             "isDirectory": true,
             "isMetadataFile": false,
             "size": 0,
-            "modifiedTime": 1512740445540,
-            "changeTime": 1512740445540,
-            "contentHash": "39f1cdad23724853f08feb709b34463c0f46da78",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "modifiedTime": 1512751753102,
+            "changeTime": 1512751753102,
+            "contentHash": "d0bc7b8a4fb71bc9aa70c45240d37d9caf4e6af3"
         }
     ],
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\aura",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\aura",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740199432,
             "changeTime": 1512740199432,
             "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -62,14 +60,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740445538,
             "changeTime": 1512740445538,
             "contentHash": "8977a1a5f8ffd1e8a3d2ae1b79fa21a4a9bd6f9a",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -77,14 +75,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes\\PrintPreviewController.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes\\PrintPreviewController.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 32565,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445538,
             "contentHash": "68b54d30a6c14c5303edba784bfe2fe123ef8ad6",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -92,14 +90,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes\\PrintPreviewController.cls-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\classes\\PrintPreviewController.cls-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 174,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445539,
             "contentHash": "ec29c6f2ff617299f8e53d0ea63d440cd27207eb",
+            "isMetadataFile": true,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -107,14 +105,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740445543,
             "changeTime": 1512740445543,
             "contentHash": "a84170298002f80971c8c8c3379aedd6fbbea316",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -122,14 +120,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages\\PrintPreviewLtngPage.page",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages\\PrintPreviewLtngPage.page",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 10236,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445542,
             "contentHash": "cd86c45e7086de7f1e9e6e35fbfeaaf06ff63f8a",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -137,14 +135,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages\\PrintPreviewLtngPage.page-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\pages\\PrintPreviewLtngPage.page-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 296,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445543,
             "contentHash": "e7a04d27a831be31278bd6c37ba5882dacfd9dd2",
+            "isMetadataFile": true,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -152,14 +150,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740445534,
             "changeTime": 1512740445534,
             "contentHash": "5b7dbf960fd797076c857ef0bbf2140ae60159c5",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -167,14 +165,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\Loading.resource",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\Loading.resource",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 11786,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445528,
             "contentHash": "81284d0ff238060eb6da01c6c108e2f64e59351b",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -182,14 +180,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\Loading.resource-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\Loading.resource-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 248,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445529,
             "contentHash": "77ec9b378f9915e8d5f8686b0e12bb4e9dbd07c4",
+            "isMetadataFile": true,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -197,14 +195,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrinterIcon.resource",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrinterIcon.resource",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 797,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445531,
             "contentHash": "6cea32699746ab26a3c5a74cdad73be4a0b3b165",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -212,14 +210,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrinterIcon.resource-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrinterIcon.resource-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 203,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445532,
             "contentHash": "8f4e4ea531152330068e2049b8a042b6aa3381ea",
+            "isMetadataFile": true,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -227,14 +225,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrintPreviewCompanyLogo.resource",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrintPreviewCompanyLogo.resource",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 36484,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445533,
             "contentHash": "ebaf1b40c60c6bc3b11e00f1c45af79f58a3a3d1",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -242,14 +240,14 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrintPreviewCompanyLogo.resource-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\staticresources\\PrintPreviewCompanyLogo.resource-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 250,
             "modifiedTime": 1512720606000,
             "changeTime": 1512740445535,
             "contentHash": "9af64ae6bb3ee9061932134c28b25f6f333efa2f",
+            "isMetadataFile": true,
+            "state": "u",
             "isWorkspace": false,
             "isArtifactRoot": false
         }
@@ -257,16 +255,94 @@
     [
         "C:\\Development-DX\\Workspace\\SFDXTrailhead",
         {
-            "state": "u",
             "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1512740449962,
             "changeTime": 1512740449962,
             "contentHash": "8226760dff66bbe4179fbaa1c452e630b793526f",
+            "isMetadataFile": false,
+            "state": "u",
             "isWorkspace": true,
             "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account\\webLinks\\Print_Preview.webLink-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account\\webLinks\\Print_Preview.webLink-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 742,
+            "modifiedTime": 1512751753092,
+            "changeTime": 1512751753092,
+            "contentHash": "2a2985c96c3e6b29e38e6b3998a4c79861bff77a"
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\layouts\\Account-Account Layout.layout-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\layouts\\Account-Account Layout.layout-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 16241,
+            "modifiedTime": 1512751753107,
+            "changeTime": 1512751753107,
+            "contentHash": "4abc6ddae5e1ec150a5add791503468b3c6f804d"
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account\\webLinks",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account\\webLinks",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1512751753092,
+            "changeTime": 1512751753092,
+            "contentHash": "c0de86c4ca11ad2c926bdf081ad6b0fbe46339c6"
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects\\Account",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1512751753090,
+            "changeTime": 1512751753090,
+            "contentHash": "54c7932f6203c017f697bc83d61b9108f1db1d8d"
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\objects",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1512751753089,
+            "changeTime": 1512751753089,
+            "contentHash": "85dfa32c97d8618d1bea083609e2c8a29845abe5"
+        }
+    ],
+    [
+        "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\layouts",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Development-DX\\Workspace\\SFDXTrailhead\\force-app\\main\\default\\layouts",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1512751753107,
+            "changeTime": 1512751753107,
+            "contentHash": "b2aa44986320a18245301bea220f7fe3f37f55d0"
         }
     ]
 ]
