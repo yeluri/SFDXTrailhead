@@ -1,0 +1,327 @@
+<!--
+	@author: Satya
+	@date created: 29 Aug 2017
+	@Desc: Print Preview for Lightning Record Pages
+-->
+ 
+<apex:page controller="PrintPreviewController" showHeader="false" sidebar="false">
+ <apex:includeLightning />
+<style type="text/css">
+		.bPageBlock .detailList tr td.dataCol, 
+        .bPageBlock .detailList tr td.labelCol
+        {
+            border-bottom:0px;
+            border:0px;
+        }
+        .detailList{
+        	border: 0px;
+        }
+        .bPageBlock .detailList tr td, .bPageBlock .detailList tr th, .hoverDetail .bPageBlock .detailList tr td, .hoverDetail .bPageBlock .detailList tr th {
+        	border-bottom: 0px;
+        }
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader{
+        	color:black;
+        }
+        .pbSubheader {
+        	background-color: #eee;
+        }
+        body .bPageBlock, body .bPageBlock .pbBody, body .bPageBlock .pbBottomButtons {
+        	background-color: white
+        }
+        body .bPageBlock .pbBody .pbSubheader .hideListButton {
+ 		   background: #989090 url(/img/alohaSkin/twisty_sprite.png) 0 -11px no-repeat;
+		}
+		body .bPageBlock .pbBody .pbSubheader .showListButton {
+ 		   background: #989090 url(/img/alohaSkin/twisty_sprite.png) 0 -11px no-repeat;
+		}
+		.bPageBlock .labelCol, body .print .topics-label {
+			font-size: 100%
+		}
+		body .bPageBlock, body .bPageBlock .pbBody, body .bPageBlock .pbBottomButtons {
+			background-color: white;
+		}
+		.pbSubheader {
+			font-size: 13px;	
+		}
+		.list{margin-left:-5px;}
+</style>
+<script src="../../soap/ajax/40.0/connection.js" type="text/javascript"></script>
+<apex:includeScript value="../../support/console/26.0/integration.js"/>
+<script langauge="text/Javascript">
+	
+	function listItems(){
+		this.cols = null,
+		this.sectionName = null,
+		this.fieldLabel = null,
+		this.fieldtype = null,
+		this.fieldAPI = null
+	}
+
+	function listRLItems(){
+		this.rlLabel = null,
+		this.rlSobject = null,
+		this.rlChildName = null,
+		this.rlKeyfield = null,
+		this.rlColfieldLabel = null,
+		this.rlColfieldApi = null
+	}
+
+		var totalItems = new Array();
+		var totalRLItems = new Array();
+
+	window.onload = function previousOnload() {
+			
+		sforce.connection.sessionId='{!GETSESSIONID()}';
+		var sObjectType = '{!sobjectName}';//'Case';//{!sobjectName};
+		//alert(sObjectType);
+		var layoutName = null;
+		var recordTypeID =  new Array();
+		//console.log({!recTypeIds});
+		recordTypeID = {!recTypeIds};
+		var result = sforce.connection.describeLayout(
+			sObjectType, layoutName,recordTypeID);
+		//alert(dlr);
+		var layouts = result.getArray("layouts");
+		//alert(layouts.length);
+
+		//Layout Sections
+		for (var i=0; i<layouts.length; i++) {
+  			var layout = layouts[0];
+  			//console.log('layout name: ' + layout.id);
+  			 detailLayoutSections(layout.detailLayoutSections);
+  			 
+		}
+
+		//Layout Related Lists
+		for(var i=0; i<layouts.length; i++){
+			var layout = layouts[0];
+			detailLayoutRelatedLists(layout.relatedLists);
+		}
+			//sforce.console.setTabTitle('Case: Print');
+			console.log(totalItems);
+			console.log(totalRLItems);
+
+		 	sendToController(JSON.stringify(totalItems),JSON.stringify(totalRLItems));
+	}
+
+	function detailLayoutSections(sections) {
+	  for (var i=0; i<sections.length; i++) {
+	    var section = sections[i];
+	    //console.log(section.columns + ":" + section.heading + ":");
+	    layoutRows(section.getArray("layoutRows"), section.columns, section.heading);
+	  }
+	}
+
+	function layoutRows(rows, cols, heading) {
+	  for (var i=0; i<rows.length; i++) {
+	    var row = rows[i];
+	    layoutItems(row.getArray("layoutItems"), cols, heading);
+	  }
+	}
+
+	function layoutItems(items, cols, heading) {
+	   for (var i=0; i<items.length; i++) {
+	    var item = items[i];
+	    //console.log("  " + item.label);
+	    layoutComponents(item.getArray("layoutComponents"), item.label, cols, heading);
+	  }
+	}
+
+	function layoutComponents(components, label, cols, heading){
+		for (var i=0; i<components.length; i++) {
+	    var comp = components[i];
+	    //console.log("  " + comp.type + "  "+ comp.value);
+
+	    comps = new listItems();
+	    comps.cols = cols;
+	    comps.sectionName = heading;
+	    comps.fieldLabel = label;
+	    comps.fieldtype = comp.type;
+	    comps.fieldAPI = comp.value;
+	    totalItems.push(comps);
+	  }	
+	}
+
+	//------------------ Related Lists ------------------------------------
+	function detailLayoutRelatedLists(relatedLists){
+		for(var i=0; i<relatedLists.length; i++){
+			var rels = relatedLists[i];
+			//console.log("---------------------------------------------------");
+			//console.log(rels.label + "  " + rels.field + "  " + rels.sobject);
+			//console.log("---------------------------------------------------");
+			relatedListsCols(rels.getArray("columns"), rels.label, rels.field, rels.sobject, rels.name);		
+		}
+		
+	}
+
+	function relatedListsCols(cols, rlLabel, rlKeyfld, rlSobject, rlChildName){
+		console.log('RL Label: ' + rlLabel);
+
+		for(var i=0; i<cols.length; i++){
+			var items = cols[i];
+			//console.log(items.field + "  " + items.field + "  " + items.fieldApiName + "  " + items.label + "  " + items.name + "  " + items.lookupId);
+			rlComps = new listRLItems();
+			rlComps.rlLabel = rlLabel;
+			rlComps.rlSobject = rlSobject;
+			rlComps.rlChildName = rlChildName;
+			rlComps.rlKeyfield = rlKeyfld;
+			rlComps.rlColfieldLabel = items.label;
+			//rlComps.rlColfieldApi = items.fieldApiName;
+			rlComps.rlColfieldApi = items.name;
+			totalRLItems.push(rlComps);
+		}
+	}
+
+	   function printPage() {
+            window.print();
+           
+        } 
+
+    function back(recordId){
+    	if(typeof sforce !='undefined' && sforce.one) {
+      		sforce.one.back(true);
+		  }
+  		
+  		//window.open('/' + recordId);
+  		//window.self.close(); 
+  		/*$Lightning.use("c:ModalWindowLtngApp", function() {
+             $Lightning.createComponent(
+            "c:ModalWindowLtngCmp",
+            {"message": 'Back to Case....', "record": recordId, "objtype":"Case"},
+            "LightningBlock",
+                function(cmp) {
+                    console.log("Component created!");
+                    console.log(cmp);
+                });
+        });*/
+        
+   }
+
+
+   
+</script>
+
+<apex:form >
+	<apex:actionFunction name="sendToController" action="{!loadInfo}" rerender="layoutSections,related" status="status">
+		<apex:param name="totalItems" assignTo="{!totalItems}" value="" />
+		<apex:param name="totalRLItems" assignTo="{!totalRLItems}" value="" />
+	</apex:actionFunction>
+	
+<table style="background-color: white" width="100%">
+	
+	<tr>
+		<td>
+			<apex:image url="{!URLFOR($Resource.PrintPreviewCompanyLogo)}" 
+			height="40" width="250" style="margin-top: 10px; margin-left: 20px; margin-bottom: 10px"></apex:image>
+	
+		</td>
+		
+		<td style="align-content: right">
+			<apex:outputLink onclick="printPage()" > <apex:image url="{!URLFOR($Resource.PrinterIcon)}" alt="Print" height="20" width="20" style="text-align: right; margin-right: 10px"/></apex:outputLink>
+		</td>
+
+		<td style="align-content: right">
+			 <apex:outputLink onclick="back('{!ParamId}'); return false" > Back to Case </apex:outputLink>
+		</td>
+	</tr>
+
+</table>
+
+<div id="LightningBlock" />
+
+<apex:actionStatus id="status">
+            <apex:facet name="start">
+            <div style="text-align: center;position: relative; left: 0; top: 50; bottom: 50; right: 0;">
+                         <!-- <img src="/img/loading.gif" alt="Loading...." height="25" width="25" />-->
+                         <img class="loader-image" src="{!URLFOR($Resource.Loading)}" alt="Loading...." />
+                        </div>
+            </apex:facet>
+        </apex:actionStatus>
+
+			<apex:pageBlock id="layoutSections" mode="maindetail" >
+			  
+				<apex:repeat value="{!mapOuter}" var="a">
+					<!--<h2>{!a}</h2><br/>-->
+					<!--<b> {!mapOuter[a]} </b>-->
+					<!-- Multi Column -->
+					<apex:pageBlockSection title="{!mapOuter[a].header}" rendered="{!IF(mapOuter[a].numCols==2,true,false)}" collapsible="false"  >	
+					<apex:repeat value="{!mapInner[a]}" var="b">
+					
+					<apex:pageBlockSectionItem >
+					
+
+						<apex:outputLabel value="{!b.fieldLabel}" />
+						<!--<apex:outputField value="{!sectionFieldValuesMap[b.fieldApi]}" />-->
+						
+						<apex:outputText value="{!sectionFieldValuesMap[b.fieldApi]}"  escape="false"  />
+						
+					</apex:pageBlockSectionItem>	
+						
+					
+					</apex:repeat>
+					</apex:pageBlockSection>
+					<!-- Multi Column -->
+
+					<!---Single Column -->
+
+					<apex:pageBlockSection columns="1" title="{!mapOuter[a].header}" rendered="{!IF(mapOuter[a].numCols==1,true,false)}" collapsible="false">	
+					<apex:repeat value="{!mapInner[a]}" var="b">
+				
+					<apex:pageBlockSectionItem >
+					
+						<apex:outputLabel value="{!b.fieldLabel}" />
+						<!--<apex:outputField value="{!sectionFieldValuesMap[b.fieldApi]}"/>-->
+						<apex:outputText value="{!sectionFieldValuesMap[b.fieldApi]}"  escape="false" />
+					
+					</apex:pageBlockSectionItem>	
+						
+						
+					</apex:repeat>
+					</apex:pageBlockSection>
+					<!--Single Column -->
+				</apex:repeat>
+				
+			</apex:pageBlock>
+	<!-- Layout Sections -->
+
+
+	<!-- Layout Related List -->
+	
+		<apex:pageBlock id="related">
+			<apex:repeat value="{!mapRlOuter}" var="a">
+			<apex:pageBlockSection columns="1" title="{!mapRlOuter[a]}" collapsible="false">
+				
+				<apex:repeat value="{!mapRlInner[a]}" var="b"><!--listWrapperRecord-->
+				
+				
+						<apex:repeat value="{!b}" var="x"><!--RlDataWrapper-->
+						<!--{!x}--><!--{!b}-->
+						<!--{!x.lstdataWrapper}
+						{!mapRlInnerInner[a]}-->
+						
+						<!--<apex:repeat value="{!mapRlInnerInner[a]}" var="size">-->
+								
+								<apex:repeat value="{!mapRlFields[a]}" var="k">
+								<apex:pageBlockSectionItem >	
+								<apex:outputLabel value="{!mapRlLabels[k]}" />
+							
+								<apex:outputText value="{!x[k]}" />
+								<!--<apex:outputField value="{!x[k]}" />-->
+								</apex:pageBlockSectionItem>
+								</apex:repeat>
+								<hr/>
+								
+							<!--</apex:repeat>-->
+						</apex:repeat>	
+						
+				</apex:repeat>
+		
+			</apex:pageBlockSection>
+			</apex:repeat>	
+			<!--<apex:iframe src="/apex/scl__Simple_Comment_List?id={!ParamId}" />-->
+		</apex:pageBlock>
+
+	<!-- Layout Related List -->	
+</apex:form>
+
+</apex:page>
